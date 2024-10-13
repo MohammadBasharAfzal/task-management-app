@@ -15,8 +15,9 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.any()) // Scans all APIs
-                .paths(PathSelectors.any()) // Scans all paths
+                .apis(RequestHandlerSelectors.basePackage("com.example.taskmanagement.controller"))
+                .paths(PathSelectors.any())
                 .build();
     }
 }
+
